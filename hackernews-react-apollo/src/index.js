@@ -15,7 +15,7 @@ import { WebSocketLink } from 'apollo-link-ws'
 import { getMainDefinition } from 'apollo-utilities'
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000'
+  uri: 'http://ec2-52-67-144-118.sa-east-1.compute.amazonaws.com:4000'
 })
 
 const authLink = setContext((_, { headers }) => {
@@ -30,7 +30,7 @@ const authLink = setContext((_, { headers }) => {
 
 
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:4000`,
+  uri: `ws://ec2-52-67-144-118.sa-east-1.compute.amazonaws.com:4000`,
   options: {
     reconnect: true,
     connectionParams: {
